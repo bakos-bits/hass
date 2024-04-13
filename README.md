@@ -1,2 +1,2 @@
 # hass
-An implementation of Home Assistant
+My Home Assistant
