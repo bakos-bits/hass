@@ -10,16 +10,21 @@
     - binary_sensor.master_bath_motion
     - binary_sensor.water_closet_motion
     - binary_sensor.guest_bath_motion
+
+- platform: group
   name: Garage_motion
   entities:
     - binary_sensor.garage_motion_1
     - binary_sensor.garage_motion_2
-    - binary_sensor.garage_motion_3
+
+- platform: group
   name: Hall motion
-  entities:   
+  entities:
     - binary_sensor.hall_motion_1
     - binary_sensor.hall_motion_2
+
+- platform: group
   name: Living room motion
-  entities:    
+  entities:
     - binary_sensor.living_room_motion_1
     - binary_sensor.living_room_motion_2
