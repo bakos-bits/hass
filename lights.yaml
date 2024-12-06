@@ -1,5 +1,6 @@
 - platform: group
   name: Color lights
+  unique_id: color_lights
   entities:
     - light.led_light
     - light.rocket_lamp
@@ -8,6 +9,7 @@
 
 - platform: group
   name: Evening lights
+  unique_id: evening_lights
   entities:
     - light.master_lamp_1
     - light.master_lamp_2
@@ -16,6 +18,7 @@
     
 - platform: group
   name: Interior lights
+  unique_id: interior_lights
   entities:
     - light.led_light
     - light.rocket_lamp

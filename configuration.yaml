@@ -1,4 +1,5 @@
 homeassistant:
+  customize: !include customize.yaml
   customize_domain:
     automation:
       initial_state: on
@@ -17,7 +18,7 @@ http:
   use_x_forwarded_for: true
   trusted_proxies: !include trusted_proxies.yaml
   ip_ban_enabled: true
-  login_attempts_threshold: 5
+  login_attempts_threshold: 3
 
 google_assistant: !include google_assistant.yaml
 

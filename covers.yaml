@@ -1,8 +1,8 @@
   - platform: template
     covers:
       garage_door:
-        unique_id: "garage_door_cover"
         friendly_name: "Garage Door"
+        unique_id: "garage_door_cover"        
         value_template: >
           {% if is_state('binary_sensor.garage_door', 'on') %}
             true
