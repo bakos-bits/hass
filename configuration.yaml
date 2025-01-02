@@ -28,6 +28,7 @@ tts:
 ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
 
+
 binary_sensor: !include binary_sensors.yaml
 fan: !include fans.yaml
 light: !include lights.yaml
@@ -35,5 +36,5 @@ switch: !include switches.yaml
 cover: !include covers.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-media_player: !include media_players.yaml
+
 

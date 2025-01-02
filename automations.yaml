@@ -721,69 +721,53 @@
   mode: single
 
 - id: '1732875843905'
-  alias: 'Media players: tv off for spotify'
-  description: Turn off the tv when Spotify is playing
+  alias: "Media players: setup for music"
+  description: Turn off the tv for music
   triggers:
-  - trigger: state
-    entity_id:
-    - media_player.home_theater
-    attribute: app_name
-    to: 'Spotify '
-  conditions: []
+    - trigger: state
+      entity_id:
+        - media_player.home_theater_cast
+      to: CC32E753
+      attribute: app_id
   actions:
-  - action: media_player.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id: media_player.sony_bravia
+    - action: media_player.turn_off
+      metadata: {}
+      data: {}
+      target:
+        entity_id:
+          - media_player.sony_bravia
   mode: single
 
 - id: '1732931352619'
-  alias: 'Media players: home theater off'
+  alias: "Media players: home theater off"
   description: Turn off the home theater when not in use
   triggers:
-  - trigger: state
-    entity_id:
-    - media_player.home_theater
-    to: idle
-    for:
-      hours: 0
-      minutes: 30
-      seconds: 0
-  - trigger: state
-    entity_id:
-    - media_player.home_theater
-    to: paused
-    for:
-      hours: 0
-      minutes: 30
-      seconds: 0
-  - trigger: state
-    entity_id:
-    - media_player.home_theater
-    to: standby
-    for:
-      hours: 0
-      minutes: 30
-      seconds: 0
-  - trigger: state
-    entity_id:
-    - media_player.denon_avr
-    to: 'off'
-    for:
-      hours: 0
-      minutes: 0
-      seconds: 0
+    - trigger: state
+      entity_id:
+        - media_player.home_theater
+      to: "off"
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 0
+    - trigger: state
+      entity_id:
+        - media_player.denon_avr
+      to: "off"
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 0
   conditions: []
   actions:
-  - action: media_player.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - media_player.sony_bravia
-      - media_player.denon_avr
-      - media_player.home_theater
+    - action: media_player.turn_off
+      metadata: {}
+      data: {}
+      target:
+        entity_id:
+          - media_player.denon_avr
+          - media_player.sony_bravia
+          - media_player.home_theater
   mode: single
 
 - id: '1732933447261'
@@ -923,7 +907,7 @@
       entity_id:
       - light.nook_bath_vanity
   mode: single
-  
+
 - id: '1732987546288'
   alias: 'Timers: master light off'
   description: Turn off the Master fan light when it's been left on
