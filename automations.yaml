@@ -161,7 +161,7 @@
     target:
       entity_id:
       - light.hall_lights
-      - light.stairway_lights
+      - light.stairway_lights      
   - wait_for_trigger:
     - trigger: state
       entity_id:
@@ -174,7 +174,7 @@
     target:
       entity_id:
       - light.hall_lights
-      - light.stairway_lights
+      - light.stairway_lights      
   mode: restart
 
 - id: '1728522023418'
@@ -606,7 +606,7 @@
       entity_id:
       - fan.bedroom_fan
       - switch.bedroom_fan_switch
-  mode: single
+  mode: restart
 
 - id: '1732613358867'
   alias: 'Ceiling fans: sync living room fan switch'
@@ -631,7 +631,7 @@
       entity_id:
       - fan.living_room_fan
       - fan.living_room_fan_switch
-  mode: single
+  mode: restart
 
 - id: '1732613539790'
   alias: 'Ceiling fans: sync family room fan switch'
@@ -656,7 +656,7 @@
       entity_id:
       - fan.family_room_fan
       - switch.family_room_fan_switch
-  mode: single
+  mode: restart
 
 - id: '1732706022664'
   alias: 'Timers: color lights off'
