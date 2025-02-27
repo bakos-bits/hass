@@ -587,25 +587,17 @@
   alias: 'Ceiling fans: sync bedroom fan switch'
   description: Keep the wall switch in sync with the bond controlled fan
   triggers:
-  - trigger: state
-    entity_id:
-    - fan.bedroom_fan
-    - switch.bedroom_fan_switch
-    to: 'on'
-  - trigger: state
-    entity_id:
-    - fan.bedroom_fan
-    - switch.bedroom_fan_switch
-    to: 'off'
+    - trigger: state
+      entity_id:
+        - fan.bedroom_fan
+      to: "on"
   conditions: []
   actions:
-  - action: homeassistant.turn_{{ trigger.to_state.state }}
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - fan.bedroom_fan
-      - switch.bedroom_fan_switch
+    - action: switch.turn_on
+      metadata: {}
+      data: {}
+      target:
+        entity_id: switch.bedroom_fan_switch
   mode: restart
 
 - id: '1732613358867'
@@ -615,21 +607,14 @@
   - trigger: state
     entity_id:
     - fan.living_room_fan
-    - fan.living_room_fan_switch
     to: 'on'
-  - trigger: state
-    entity_id:
-    - fan.living_room_fan
-    - fan.living_room_fan_switch
-    to: 'off'
   conditions: []
   actions:
-  - action: homeassistant.turn_{{ trigger.to_state.state }}
+  - action: fan.turn_on
     metadata: {}
     data: {}
     target:
       entity_id:
-      - fan.living_room_fan
       - fan.living_room_fan_switch
   mode: restart
 
@@ -640,21 +625,14 @@
   - trigger: state
     entity_id:
     - fan.family_room_fan
-    - switch.family_room_fan_switch
     to: 'on'
-  - trigger: state
-    entity_id:
-    - fan.family_room_fan
-    - switch.family_room_fan_switch
-    to: 'off'
   conditions: []
   actions:
-  - action: homeassistant.turn_{{ trigger.to_state.state }}
+  - action: switch.turn_on
     metadata: {}
     data: {}
     target:
       entity_id:
-      - fan.family_room_fan
       - switch.family_room_fan_switch
   mode: restart
 
